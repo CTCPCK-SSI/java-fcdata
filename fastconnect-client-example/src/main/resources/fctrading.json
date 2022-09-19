@@ -1,0 +1,79 @@
+{
+  "url": "https://fc-tradeapi.ssi.com.vn",
+  "streaming_url": "https://fc-tradehub.ssi.com.vn",
+  "consumerId": "2c7c511d4eb940d6a8b09aaef5711654",
+  "consumerSecret": "bce8d1b486e94a99b96ba7e9f6169fbd",
+  "privateKey": "PFJTQUtleVZhbHVlPjxNb2R1bHVzPnNhZDhnM0tGZVhrK1BBOUdlUERkdVUwUnY5ZXpsTGpSRjExdjV0UEFMZk8zYnRtbmlucmJWdmxuU3FPTGluRkpPNVhwbGtzMy80dE01WGxVeTM2dndzYlBleld4UVE1dThodEo0bGZGL2F6NkdGZVZsZWFBR0RmRnZJWVUyS2dNRHA1bGZwVkNkdE5HczRCVVNtd0JlWWVXSWdBMEVjbFgrMjFKalR5Z2Q2VT08L01vZHVsdXM+PEV4cG9uZW50PkFRQUI8L0V4cG9uZW50PjxQPjBDREcwU3RyOUpnNFBIQnBiUEtialFWcjlvUXlyVm9nU2dscHZQZUh2bmx5TCtHOFBEK3hKcnBJMndmZ3RLa3o4c3lpM0NSd3lkUDJzYjY2eUZQa2Z3PT08L1A+PFE+Mm9SUmp6a3FrL2RTNDg2REpTNjRpTmpyMEZhVElVK0Y5OCsrZUJCeENnYW5lamoraDRVbk4rWXB2bWZzdFdIUVNDd01wZXByd1E2bWhQSnhMVWlCMnc9PTwvUT48RFA+clhMelhqUjZ0by81SmQxazd1Zk0zSnl0R2ZlWUtFSVk4THFoaFZzZ3BJdWZydW5JTHNuQndBMjFVOXhmMXcrLy9GT3dVaGlJYXBzY1Y0c2xMSGhGenc9PTwvRFA+PERRPjBIaUVSeHZHM3p1SnZRUjhZYkRkSk5HdXlDaVFYYXM4cUZ0dDM2WHY4aHkvRXYvazlPMjNxTURRK25LemhhZzN5V01jL2YxVHArK09OakFHZ2FrM0dRPT08L0RRPjxJbnZlcnNlUT5EN0VSd2Y3RWxoR2t2NjBNRFM5Z2VtNXhpOXJuUktZeGJ5TzROMWVNS0tqMmNoM1hqc3g3Z3dOcGp3K3hJRTB0dkZhN09hb085N0daVE5icUhDR3NUUT09PC9JbnZlcnNlUT48RD5xeSszOUxYeTFnVzFxWXdTblZHRVpoMVVvQ2JLM2VGbFlmMWdhZTNiZnF3ZE1zeTYrOTY4NHNjNitCbzF5VGEybVpzd1ZlbXZVU2c2OWRoL2xBTkVlbkdZaWxuOUlVZ1U2SmU1alBCaFppVzgwVWJsTE1YN2x4NmhWSjN4S1B5eFVWM2hlV1d4aFhIa0RpQXZSaUlSQ2lERWl1SHhHcWhQMG5RTFM1bHgydlU9PC9EPjwvUlNBS2V5VmFsdWU+",
+  "code": "8aTQgtE5A1X5vK",
+  "NewOrderRequest": {
+    "instrumentID": "string",
+    "market": "string",
+    "buySell": "string",
+    "orderType": "string",
+    "channelID": "string",
+    "price": 0,
+    "quantity": 0,
+    "account": "string",
+    "requestID": "string",
+    "stopOrder": true,
+    "stopPrice": 0,
+    "stopType": "string",
+    "stopStep": 0,
+    "lossStep": 0,
+    "profitStep": 0,
+    "code": "string",
+    "modifiable": true
+  },
+  "ModifyOrderRequest": {
+    "orderID": "string",
+    "price": 0,
+    "quantity": 0,
+    "account": "string",
+    "instrumentID": "string",
+    "marketID": "string",
+    "buySell": "string",
+    "requestID": "string",
+    "orderType": "string",
+    "code": "string"
+  },
+  "CancelOrderRequest": {
+    "orderID": "string",
+    "account": "string",
+    "marketID": "string",
+    "instrumentID": "string",
+    "buySell": "string",
+    "requestID": "string",
+    "code": "string"
+  },
+  "CashAccountBalanceRequest": {
+    "account": "1291551"
+  },
+  "DerCashAccountBalanceRequest": {
+    "account": ""
+  },
+  "PPMMRAccountRequest": {
+    "account": ""
+  },
+  "StockAccountPositionRequest": {
+    "account": ""
+  },
+  "DerAccountPositionRequest": {
+    "account": "",
+    "querySummary": false
+  },
+  "MaxBuyQtyRequest": {
+    "account": "",
+    "instrumentID": "",
+    "price": 20000
+  },
+  "MaxSellQtyRequest": {
+    "account": "",
+    "instrumentID": "",
+    "price": 20000
+  },
+  "OrderHistoryRequest": {
+    "account": "",
+    "startDate": "",
+    "endDate": ""
+  }
+}
