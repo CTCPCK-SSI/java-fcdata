@@ -32,8 +32,8 @@ Add two dependency on the main FastConnect artifact:
 
 ### FCDataClient
 ```java
-import vn.com.ssi.Data.DataContract.*;
-import vn.com.ssi.Data.FCDataClient;
+import com.ssi.fcdata.DataContract.*;
+import com.ssi.FastConnect.FCDataClient;
 FCDataClient client = new FCDataClient(config.get("consumerId").getAsString(), config.get("consumerSecret").getAsString(), config.get("url").getAsString());
 SecuritiesRequest rq1 = new SecuritiesRequest();
 rq1.market = "HOSE";
@@ -41,9 +41,9 @@ System.out.println("Securities =" + new ObjectMapper().writeValueAsString(client
 ```
 ### FCDataStreaming
 ```java
-import vn.com.ssi.Data.DataContract.*;
-import vn.com.ssi.Data.FCDataClient;
-import vn.com.ssi.Data.FCDataStreaming;
+import com.ssi.fcdata.DataContract.*;
+import com.ssi.FastConnect.FCDataClient;
+import com.ssi.FastConnect.FCDataStreaming;
 FCDataClient client = new FCDataClient(config.get("consumerId").getAsString(), config.get("consumerSecret").getAsString(), config.get("url").getAsString());
 client.init();
 FCDataStreaming streaming = new FCDataStreaming(client, config.get("streaming_url").getAsString());
