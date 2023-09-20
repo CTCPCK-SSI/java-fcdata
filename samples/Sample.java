@@ -1,5 +1,3 @@
-package com.ssi.fcdata;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
@@ -18,7 +16,7 @@ import java.security.spec.InvalidKeySpecException;
 import java.util.Map;
 import java.util.Scanner;
 
-public class Main {
+public class Sample {
     public static String read(InputStream s) throws IOException {
         ByteArrayOutputStream result = new ByteArrayOutputStream();
         byte[] buffer = new byte[1024];
@@ -53,7 +51,7 @@ public class Main {
 
     public static void FCDataAPI() throws Exception {
 
-        InputStream jsonStream = Main.class.getResourceAsStream("/fcdata.json");
+        InputStream jsonStream = Sample.class.getResourceAsStream("/fcdata.json");
         Gson gson = new Gson();
         JsonObject config = new JsonParser().parse(read(jsonStream)).getAsJsonObject();
         FCDataClient client = new FCDataClient(config.get("consumerId").getAsString(), config.get("consumerSecret").getAsString(), config.get("url").getAsString());
@@ -73,56 +71,56 @@ public class Main {
             String line = inputReader.nextLine();
             switch (line) {
                 case "1":
-                    jsonStream = Main.class.getResourceAsStream("/fcdata.json");
+                    jsonStream = Sample.class.getResourceAsStream("/fcdata.json");
                     config = new JsonParser().parse(read(jsonStream)).getAsJsonObject();
                     data = config.get("SecuritiesRequest").toString();
                     System.out.println("Request: " + data);
                     System.out.println("Response: " + new ObjectMapper().writeValueAsString(client.GetSecurities(gson.fromJson(data, SecuritiesRequest.class))));
                     break;
                 case "2":
-                    jsonStream = Main.class.getResourceAsStream("/fcdata.json");
+                    jsonStream = Sample.class.getResourceAsStream("/fcdata.json");
                     config = new JsonParser().parse(read(jsonStream)).getAsJsonObject();
                     data = config.get("SecuritiesDetailRequest").toString();
                     System.out.println("Request: " + data);
                     System.out.println("Response: " + new ObjectMapper().writeValueAsString(client.GetSecuritiesDetail(gson.fromJson(data, SecuritiesDetailRequest.class))));
                     break;
                 case "3":
-                    jsonStream = Main.class.getResourceAsStream("/fcdata.json");
+                    jsonStream = Sample.class.getResourceAsStream("/fcdata.json");
                     config = new JsonParser().parse(read(jsonStream)).getAsJsonObject();
                     data = config.get("IndexComponentsRequest").toString();
                     System.out.println("Request: " + data);
                     System.out.println("Response: " + new ObjectMapper().writeValueAsString(client.GetIndexComponents(gson.fromJson(data, IndexComponentsRequest.class))));
                     break;
                 case "4":
-                    jsonStream = Main.class.getResourceAsStream("/fcdata.json");
+                    jsonStream = Sample.class.getResourceAsStream("/fcdata.json");
                     config = new JsonParser().parse(read(jsonStream)).getAsJsonObject();
                     data = config.get("IndexListRequest").toString();
                     System.out.println("Request: " + data);
                     System.out.println("Response: " + new ObjectMapper().writeValueAsString(client.GetIndexList(gson.fromJson(data, IndexListRequest.class))));
                     break;
                 case "5":
-                    jsonStream = Main.class.getResourceAsStream("/fcdata.json");
+                    jsonStream = Sample.class.getResourceAsStream("/fcdata.json");
                     config = new JsonParser().parse(read(jsonStream)).getAsJsonObject();
                     data = config.get("DailyOhlcRequest").toString();
                     System.out.println("Request: " + data);
                     System.out.println("Response: " + new ObjectMapper().writeValueAsString(client.GetDailyOhlc(gson.fromJson(data, DailyOhlcRequest.class))));
                     break;
                 case "6":
-                    jsonStream = Main.class.getResourceAsStream("/fcdata.json");
+                    jsonStream = Sample.class.getResourceAsStream("/fcdata.json");
                     config = new JsonParser().parse(read(jsonStream)).getAsJsonObject();
                     data = config.get("IntradayOhlcRequest").toString();
                     System.out.println("Request: " + data);
                     System.out.println("Response: " + new ObjectMapper().writeValueAsString(client.GetIntradayOhlc(gson.fromJson(data, IntradayOhlcRequest.class))));
                     break;
                 case "7":
-                    jsonStream = Main.class.getResourceAsStream("/fcdata.json");
+                    jsonStream = Sample.class.getResourceAsStream("/fcdata.json");
                     config = new JsonParser().parse(read(jsonStream)).getAsJsonObject();
                     data = config.get("DailyIndexRequest").toString();
                     System.out.println("Request: " + data);
                     System.out.println("Response: " + new ObjectMapper().writeValueAsString(client.GetDailyIndex(gson.fromJson(data, DailyIndexRequest.class))));
                     break;
                 case "8":
-                    jsonStream = Main.class.getResourceAsStream("/fcdata.json");
+                    jsonStream = Sample.class.getResourceAsStream("/fcdata.json");
                     config = new JsonParser().parse(read(jsonStream)).getAsJsonObject();
                     data = config.get("DailyStockPriceRequest").toString();
                     System.out.println("Request: " + data);
@@ -138,7 +136,7 @@ public class Main {
     }
 
     public static void FCDataStreaming() throws Exception {
-        InputStream jsonStream = Main.class.getResourceAsStream("/fcdata.json");
+        InputStream jsonStream = Sample.class.getResourceAsStream("/fcdata.json");
         Gson gson = new Gson();
         JsonObject config = new JsonParser().parse(read(jsonStream)).getAsJsonObject();
         FCDataClient client = new FCDataClient(config.get("consumerId").getAsString(), config.get("consumerSecret").getAsString(), config.get("url").getAsString());

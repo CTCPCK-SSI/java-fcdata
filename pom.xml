@@ -66,6 +66,12 @@
                 </plugin>
         </plugins>
     </build>
+     <distributionManagement>
+        <repository>
+            <id>local</id>
+            <url>file://./repo</url>
+        </repository>
+	</distributionManagement>
     <dependencies>
         <dependency>
             <groupId>com.google.guava</groupId>
