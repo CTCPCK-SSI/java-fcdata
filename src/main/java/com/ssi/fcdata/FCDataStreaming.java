@@ -6,6 +6,7 @@ import microsoft.aspnet.signalr.client.http.Request;
 import microsoft.aspnet.signalr.client.hubs.HubConnection;
 import microsoft.aspnet.signalr.client.hubs.HubProxy;
 import microsoft.aspnet.signalr.client.hubs.Subscription;
+import microsoft.aspnet.signalr.client.transport.LongPollingTransport;
 import microsoft.aspnet.signalr.client.transport.WebsocketTransport;
 
 import java.util.Map;
@@ -28,12 +29,13 @@ public class FCDataStreaming {
             _url = url.substring(0,url.length() -1) + "/v2.0";
         else
             _url = url + "/v2.0";
-        String access_token = _client.GetAccessToken();
+        final String access_token = _client.GetAccessToken();
         String queryString = "access_token=" + access_token;
+        //String queryString = "token=" + access_token;
         _hubConnection = new HubConnection(_url, queryString, true, new Logger(){
             @Override
             public void log(java.lang.String arg0, microsoft.aspnet.signalr.client.LogLevel arg1){
-                System.out.println();
+                //System.out.println(arg0);
             }
         }){
             @Override
@@ -115,15 +117,17 @@ public class FCDataStreaming {
     public void start() {
         // Start the connection
         _hubConnection.start(new WebsocketTransport(new NullLogger() ));
+        //_hubConnection.start(new WebsocketTransport(_hubConnection.getLogger()));
+        //_hubConnection.start(new LongPollingTransport(_hubConnection.getLogger()));
     }
 
     public static void main(String[] args) throws Exception {
 
-        FCDataClient client = new FCDataClient("", ""
-                , "https://fc-data.ssi.com.vn"
+        FCDataClient client = new FCDataClient("dd11c30e98494385a180f6ebae321272", "c8cb7e7441534e3aab8eb3cb1841a6ae"
+                , "http://192.168.213.98:1189"
         );
-        FCDataStreaming streaming = new FCDataStreaming(client, "https://fc-data.ssi.com.vn");
-        streaming.setChannel("X-QUOTE:ALL,X-TRADE:ALL,F:ALL,R:ALL,MI:ALL");
+        FCDataStreaming streaming = new FCDataStreaming(client, "https://fcdatahub-uat.ssi.com.vn");
+        streaming.setChannel("X:ALL");
         streaming.onReceived(new MessageReceivedHandler() {
             @Override
             public void onMessageReceived(JsonElement json) {
@@ -135,7 +139,6 @@ public class FCDataStreaming {
         Scanner inputReader = new Scanner(System.in);
         String line = inputReader.nextLine();
         while (!"exit".equals(line)) {
-
             line = inputReader.next();
         }
     }
