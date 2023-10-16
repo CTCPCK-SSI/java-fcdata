@@ -129,9 +129,9 @@ public class FCDataStreaming {
     public static void main(String[] args) throws Exception {
 
         FCDataClient client = new FCDataClient("", ""
-                , "http://192.168.213.98:1189"
+                , ""
         );
-        FCDataStreaming streaming = new FCDataStreaming(client, "http://192.168.213.98:1189/FastConnectHub");
+        FCDataStreaming streaming = new FCDataStreaming(client, "");
         streaming.setChannel("X:ALL");
         streaming.onReceived(new MessageReceivedHandler() {
             @Override

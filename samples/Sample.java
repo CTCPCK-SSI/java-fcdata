@@ -131,7 +131,6 @@ public class Sample {
     public static void FCDataStreaming() throws Exception {
         JSONParser parser = new JSONParser();
         Object obj = parser.parse(new FileReader(Paths.get("").toAbsolutePath().toString() + "/fcdata.json"));
-        //Object obj = parser.parse(new FileReader("C:\\Users\\hoaht\\Desktop\\fcdata.json"));
         JSONObject jsonObject = (JSONObject)obj;
         String consumerId = (String)jsonObject.get("consumerId");
         String consumerSecret = (String)jsonObject.get("consumerSecret");
