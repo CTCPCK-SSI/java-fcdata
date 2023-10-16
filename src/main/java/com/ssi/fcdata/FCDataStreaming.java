@@ -6,7 +6,6 @@ import microsoft.aspnet.signalr.client.http.Request;
 import microsoft.aspnet.signalr.client.hubs.HubConnection;
 import microsoft.aspnet.signalr.client.hubs.HubProxy;
 import microsoft.aspnet.signalr.client.hubs.Subscription;
-import microsoft.aspnet.signalr.client.transport.LongPollingTransport;
 import microsoft.aspnet.signalr.client.transport.WebsocketTransport;
 
 import java.util.Map;
@@ -92,26 +91,32 @@ public class FCDataStreaming {
 
     public void onError(ErrorCallback callback){
         _hubConnection.error(callback);
+        //System.out.println("onError" + callback.toString());
     }
     public void onConnected(Runnable callback){
         mOnConnected = callback;
-
+        //System.out.println("onConnected" + callback.toString());
     }
     public void onClosed(Runnable callback){
         _hubConnection.closed(callback);
+        //System.out.println("onClosed" + callback.toString());
     }
     public void onStateChanged(StateChangedCallback handler){
         _hubConnection.stateChanged(handler);
+        //System.out.println("onStateChanged" + handler.toString());
     }
     public void onReconnecting(Runnable handler) {
         _hubConnection.reconnecting(handler);
+        //System.out.println("onReconnecting" + handler.toString());
     }
 
     public void onReconnected(Runnable handler) {
         _hubConnection.reconnected( handler);
+        //System.out.println("onReconnected" + handler.toString());
     }
     public void onReceived(MessageReceivedHandler handler) {
         mOnReceived = handler;
+        //System.out.println("onReceived" + handler.toString());
     }
 
     public void start() {
@@ -126,7 +131,7 @@ public class FCDataStreaming {
         FCDataClient client = new FCDataClient("dd11c30e98494385a180f6ebae321272", "c8cb7e7441534e3aab8eb3cb1841a6ae"
                 , "http://192.168.213.98:1189"
         );
-        FCDataStreaming streaming = new FCDataStreaming(client, "https://fcdatahub-uat.ssi.com.vn");
+        FCDataStreaming streaming = new FCDataStreaming(client, "http://192.168.213.98:1189/FastConnectHub");
         streaming.setChannel("X:ALL");
         streaming.onReceived(new MessageReceivedHandler() {
             @Override
