@@ -101,7 +101,7 @@ public class FCDataClient {
         return get(req, API.GET_DAILY_STOCKPRICE);
     }
     public static void main(String[] args) throws Exception {
-        FCDataClient client = new FCDataClient("", "","https://fc-data.ssi.com.vn");
+        FCDataClient client = new FCDataClient("", "","");
         client.init();
 
 
