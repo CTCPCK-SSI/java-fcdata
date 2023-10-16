@@ -128,7 +128,7 @@ public class FCDataStreaming {
 
     public static void main(String[] args) throws Exception {
 
-        FCDataClient client = new FCDataClient("dd11c30e98494385a180f6ebae321272", "c8cb7e7441534e3aab8eb3cb1841a6ae"
+        FCDataClient client = new FCDataClient("", ""
                 , "http://192.168.213.98:1189"
         );
         FCDataStreaming streaming = new FCDataStreaming(client, "http://192.168.213.98:1189/FastConnectHub");
