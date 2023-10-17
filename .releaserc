@@ -1,0 +1,36 @@
+{
+  "branches": "master",
+  "repositoryUrl": "https://github.com/SSI-Securities-Corporation/java-fcdata.git",
+  "debug": "false",
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    [
+      "@semantic-release/changelog",
+      {
+        "changelogFile": "CHANGELOG.md",
+        "changelogTitle": "# Java FC Data Changelog"
+      }
+    ],
+    [
+      "@semantic-release/git",
+      {
+        "assets": [
+          "pom.xml",
+          "CHANGELOG.md"
+        ]
+      }
+    ],
+    [
+      "@semantic-release/github",
+      {
+        "assets": [
+          {
+            "name": "fcdata-client.jar",
+            "path": "target/*.jar"
+          }
+        ]
+      }
+    ]
+  ]
+}
