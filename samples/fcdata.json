@@ -1,0 +1,58 @@
+{
+    "url": "",
+    "streaming_url": "",
+    "consumerId": "",
+    "consumerSecret": "",
+    "channels": "X-TRADE:SSI",
+    "SecuritiesRequest": {
+      "market": "HOSE",
+	  "pageIndex": 1,
+	  "pageSize": 100
+    },
+    "SecuritiesDetailRequest": {
+      "market": "HOSE",
+      "symbol": "SSI",
+	  "pageIndex": 1,
+	  "pageSize": 100
+    },
+    "IndexComponentsRequest": {
+      "indexCode": "VN30",
+	  "pageIndex": 1,
+	  "pageSize": 100
+    },
+    "IndexListRequest": {
+      "exchange": "HOSE",
+	  "pageIndex": 1,
+	  "pageSize": 100
+    },
+    "DailyOhlcRequest": {
+      "symbol": "SSI",
+      "fromDate": "17/08/2022",
+      "toDate": "18/08/2022",
+	  "pageIndex": 1,
+	  "pageSize": 100
+    },
+    "IntradayOhlcRequest": {
+      "symbol": "SSI",
+      "fromDate": "17/08/2022",
+      "toDate": "18/08/2022",
+      "resolution": 60,
+	  "pageIndex": 1,
+	  "pageSize": 100
+    },
+    "DailyIndexRequest": {
+      "indexId": "VN30",
+      "fromDate": "16/08/2022",
+      "toDate": "18/08/2022",
+	  "pageIndex": 1,
+	  "pageSize": 100
+    },
+    "DailyStockPriceRequest": {
+      "symbol": "SSI",
+      "fromDate": "17/08/2022",
+      "toDate": "18/08/2022",
+	  "pageIndex": 1,
+	  "pageSize": 100
+    }
+  }
+  

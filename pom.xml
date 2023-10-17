@@ -66,12 +66,12 @@
                 </plugin>
         </plugins>
     </build>
-     <distributionManagement>
+     <!-- <distributionManagement>
         <repository>
             <id>local</id>
             <url>file://./repo</url>
         </repository>
-	</distributionManagement>
+	</distributionManagement> -->
     <dependencies>
         <dependency>
             <groupId>com.google.guava</groupId>
