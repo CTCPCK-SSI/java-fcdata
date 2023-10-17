@@ -9,7 +9,7 @@
       "@semantic-release/changelog",
       {
         "changelogFile": "CHANGELOG.md",
-        "changelogTitle": "# Example HelloWorld Application Changelog"
+        "changelogTitle": "# Java FC Data Changelog"
       }
     ],
     [
