@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>com.ssi</groupId>
     <artifactId>fcdata</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
-
     <name>com.ssi.fastconnect:fcdata-client</name>
     <description>FastConnect DataAPI java client</description>
-
     <licenses>
         <license>
             <name>The GNU Lesser General Public Licence, Version 3.0</name>
@@ -27,7 +23,6 @@
             <url>https://ssi.com.vn</url>
             <organization>SSI</organization>
             <organizationUrl>https://ssi.com.vn</organizationUrl>
-
             <roles>
                 <role>Developer</role>
             </roles>
@@ -41,7 +36,6 @@
     </properties>
     <build>
         <plugins>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -66,7 +60,6 @@
             </plugin>
         </plugins>
     </build>
-
     <distributionManagement>
         <repository>
             <id>github</id>
@@ -74,7 +67,6 @@
             <url>https://maven.pkg.github.com/SSI-Securities-Corporation/java-fcdata</url>
         </repository>
     </distributionManagement>
-
     <dependencies>
         <dependency>
             <groupId>com.google.guava</groupId>
@@ -107,5 +99,4 @@
             <version>1.2.1</version>
         </dependency>
     </dependencies>
-
 </project>
